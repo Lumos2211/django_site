@@ -1,0 +1,18 @@
+{# templates/components/navbar.html #}
+<nav class="navbar">
+    <div class="container">
+        <div style="font-size:1.125rem;font-weight:700">My Django Site</div>
+        <div style="margin-left:auto;display:flex;gap:.5rem">
+        <ul class="nav">
+            <li class="nav-item {% if request and request.path == '/' %}active{% endif %}">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item {% if request and request.path == '/catalog/' %}active{% endif %}">
+                <a class="nav-link" href="/catalog/">Catalog</a>
+            </li>
+            <li class="nav-item {% if request and request.path == '/about/' %}active{% endif %}">
+                <a class="nav-link" href="/about/">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
