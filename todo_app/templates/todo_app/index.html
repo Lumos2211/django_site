@@ -1,0 +1,11 @@
+{% extends "todo_app/base.html" %}
+
+{% block body %}
+    <h1 style="margin:0 0 .25rem 0">Welcome on ToDo App</h1>
+    <ul>
+        <li><a href="{% url 'todo_app:list' %}">All todo items</a></li>
+        <li><a href="{% url 'todo_app:done' %}">Done todo items</a></li>
+    </dul>
+    <h2>ToDos:</h2>
+    {% include "todo_app/components/todo_items_list.html" %}
+{% endblock body %}
