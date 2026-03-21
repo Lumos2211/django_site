@@ -7,7 +7,7 @@
         <li><a href="{% url 'todo_app:done' %}">Done todo items</a></li>
         <li><a href="{% url 'todo_app:create' %}">Create ToDo Item</a></li>
 
-    </dul>
+    </ul>
     <h2>ToDos:</h2>
     {% include "todo_app/components/todo_items_list.html" %}
 {% endblock body %}
