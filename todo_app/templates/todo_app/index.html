@@ -5,6 +5,8 @@
     <ul>
         <li><a href="{% url 'todo_app:list' %}">All todo items</a></li>
         <li><a href="{% url 'todo_app:done' %}">Done todo items</a></li>
+        <li><a href="{% url 'todo_app:create' %}">Create ToDo Item</a></li>
+
     </dul>
     <h2>ToDos:</h2>
     {% include "todo_app/components/todo_items_list.html" %}

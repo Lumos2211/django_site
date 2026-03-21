@@ -1,7 +1,12 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse
+from django.views.generic import ListView, DetailView, CreateView
+
+
+from todo_app.forms import ToDoItemForm
 from .models import ToDoItem
+from .forms import ToDoItemForm
 
 
 class ToDoAppIndexView(ListView):
@@ -16,5 +21,12 @@ class ToDoAppView(ListView):
 class ToDoAppDoneView(ListView):
     queryset = ToDoItem.objects.filter(done=True).all() 
     
+
 class ToDoDetailView(DetailView):
     model = ToDoItem
+
+
+class ToDoItemCreateView(CreateView):
+    model = ToDoItem
+    form_class = ToDoItemForm
+    # fields = ("title", "description") #если нет надобности в кастомной форме
